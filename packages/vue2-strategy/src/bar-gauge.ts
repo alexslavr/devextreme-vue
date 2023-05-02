@@ -7,6 +7,7 @@ type AccessibleOptions = Pick<Properties,
   "backgroundColor" |
   "barSpacing" |
   "baseValue" |
+  "centerTemplate" |
   "disabled" |
   "elementAttr" |
   "endValue" |
@@ -50,6 +51,7 @@ const DxBarGauge = createComponent({
     backgroundColor: String,
     barSpacing: Number,
     baseValue: Number,
+    centerTemplate: {},
     disabled: Boolean,
     elementAttr: Object,
     endValue: Number,
@@ -90,6 +92,7 @@ const DxBarGauge = createComponent({
     "update:backgroundColor": null,
     "update:barSpacing": null,
     "update:baseValue": null,
+    "update:centerTemplate": null,
     "update:disabled": null,
     "update:elementAttr": null,
     "update:endValue": null,
@@ -498,14 +501,12 @@ const DxLoadingIndicator = createConfigurationComponent({
     "update:isActive": null,
     "update:hoveredElement": null,
     "update:backgroundColor": null,
-    "update:enabled": null,
     "update:font": null,
     "update:show": null,
     "update:text": null,
   },
   props: {
     backgroundColor: String,
-    enabled: Boolean,
     font: Object,
     show: Boolean,
     text: String
