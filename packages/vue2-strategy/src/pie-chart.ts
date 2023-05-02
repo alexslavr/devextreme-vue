@@ -369,19 +369,6 @@ const DxBorder = createConfigurationComponent({
   }
 });
 (DxBorder as any).$_optionName = "border";
-const DxColor = createConfigurationComponent({
-  emits: {
-    "update:isActive": null,
-    "update:hoveredElement": null,
-    "update:base": null,
-    "update:fillId": null,
-  },
-  props: {
-    base: String,
-    fillId: String
-  }
-});
-(DxColor as any).$_optionName = "color";
 const DxCommonAnnotationSettings = createConfigurationComponent({
   emits: {
     "update:isActive": null,
@@ -474,7 +461,7 @@ const DxCommonSeriesSettings = createConfigurationComponent({
     argumentField: String,
     argumentType: String,
     border: Object,
-    color: [Object, String],
+    color: String,
     hoverMode: String,
     hoverStyle: Object,
     label: Object,
@@ -490,7 +477,6 @@ const DxCommonSeriesSettings = createConfigurationComponent({
 (DxCommonSeriesSettings as any).$_optionName = "commonSeriesSettings";
 (DxCommonSeriesSettings as any).$_expectedChildren = {
   border: { isCollectionItem: false, optionName: "border" },
-  color: { isCollectionItem: false, optionName: "color" },
   hoverStyle: { isCollectionItem: false, optionName: "hoverStyle" },
   label: { isCollectionItem: false, optionName: "label" },
   selectionStyle: { isCollectionItem: false, optionName: "selectionStyle" },
@@ -599,19 +585,16 @@ const DxHoverStyle = createConfigurationComponent({
     "update:border": null,
     "update:color": null,
     "update:hatching": null,
-    "update:highlight": null,
   },
   props: {
     border: Object,
-    color: [Object, String],
-    hatching: Object,
-    highlight: Boolean
+    color: String,
+    hatching: Object
   }
 });
 (DxHoverStyle as any).$_optionName = "hoverStyle";
 (DxHoverStyle as any).$_expectedChildren = {
   border: { isCollectionItem: false, optionName: "border" },
-  color: { isCollectionItem: false, optionName: "color" },
   hatching: { isCollectionItem: false, optionName: "hatching" },
   seriesBorder: { isCollectionItem: false, optionName: "border" }
 };
@@ -886,19 +869,16 @@ const DxSelectionStyle = createConfigurationComponent({
     "update:border": null,
     "update:color": null,
     "update:hatching": null,
-    "update:highlight": null,
   },
   props: {
     border: Object,
-    color: [Object, String],
-    hatching: Object,
-    highlight: Boolean
+    color: String,
+    hatching: Object
   }
 });
 (DxSelectionStyle as any).$_optionName = "selectionStyle";
 (DxSelectionStyle as any).$_expectedChildren = {
   border: { isCollectionItem: false, optionName: "border" },
-  color: { isCollectionItem: false, optionName: "color" },
   hatching: { isCollectionItem: false, optionName: "hatching" },
   seriesBorder: { isCollectionItem: false, optionName: "border" }
 };
@@ -927,7 +907,7 @@ const DxSeries = createConfigurationComponent({
     argumentField: String,
     argumentType: String,
     border: Object,
-    color: [Object, String],
+    color: String,
     hoverMode: String,
     hoverStyle: Object,
     label: Object,
@@ -1151,7 +1131,6 @@ export {
   DxAnnotationBorder,
   DxArgumentFormat,
   DxBorder,
-  DxColor,
   DxCommonAnnotationSettings,
   DxCommonSeriesSettings,
   DxConnector,

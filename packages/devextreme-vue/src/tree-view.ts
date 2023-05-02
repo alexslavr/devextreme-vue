@@ -7,7 +7,6 @@ type AccessibleOptions = Pick<Properties,
   "accessKey" |
   "activeStateEnabled" |
   "animationEnabled" |
-  "collapseIcon" |
   "createChildren" |
   "dataSource" |
   "dataStructure" |
@@ -18,7 +17,6 @@ type AccessibleOptions = Pick<Properties,
   "expandAllEnabled" |
   "expandedExpr" |
   "expandEvent" |
-  "expandIcon" |
   "expandNodesRecursive" |
   "focusStateEnabled" |
   "hasItemsExpr" |
@@ -75,7 +73,6 @@ const DxTreeView = createComponent({
     accessKey: String,
     activeStateEnabled: Boolean,
     animationEnabled: Boolean,
-    collapseIcon: {},
     createChildren: Function,
     dataSource: {},
     dataStructure: String,
@@ -86,7 +83,6 @@ const DxTreeView = createComponent({
     expandAllEnabled: Boolean,
     expandedExpr: [Function, String],
     expandEvent: String,
-    expandIcon: {},
     expandNodesRecursive: Boolean,
     focusStateEnabled: Boolean,
     hasItemsExpr: [Function, String],
@@ -140,7 +136,6 @@ const DxTreeView = createComponent({
     "update:accessKey": null,
     "update:activeStateEnabled": null,
     "update:animationEnabled": null,
-    "update:collapseIcon": null,
     "update:createChildren": null,
     "update:dataSource": null,
     "update:dataStructure": null,
@@ -151,7 +146,6 @@ const DxTreeView = createComponent({
     "update:expandAllEnabled": null,
     "update:expandedExpr": null,
     "update:expandEvent": null,
-    "update:expandIcon": null,
     "update:expandNodesRecursive": null,
     "update:focusStateEnabled": null,
     "update:hasItemsExpr": null,
@@ -284,6 +278,8 @@ const DxOptions = createConfigurationComponent({
     "update:onClick": null,
     "update:onContentReady": null,
     "update:onDisposing": null,
+    "update:onFocusIn": null,
+    "update:onFocusOut": null,
     "update:onInitialized": null,
     "update:onOptionChanged": null,
     "update:rtlEnabled": null,
@@ -311,6 +307,8 @@ const DxOptions = createConfigurationComponent({
     onClick: Function,
     onContentReady: Function,
     onDisposing: Function,
+    onFocusIn: Function,
+    onFocusOut: Function,
     onInitialized: Function,
     onOptionChanged: Function,
     rtlEnabled: Boolean,

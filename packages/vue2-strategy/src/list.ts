@@ -67,7 +67,6 @@ type AccessibleOptions = Pick<Properties,
   "searchValue" |
   "selectAllMode" |
   "selectAllText" |
-  "selectByClick" |
   "selectedItemKeys" |
   "selectedItems" |
   "selectionMode" |
@@ -147,7 +146,6 @@ const DxList = createComponent({
     searchValue: String,
     selectAllMode: String,
     selectAllText: String,
-    selectByClick: Boolean,
     selectedItemKeys: Array,
     selectedItems: Array,
     selectionMode: String,
@@ -224,7 +222,6 @@ const DxList = createComponent({
     "update:searchValue": null,
     "update:selectAllMode": null,
     "update:selectAllText": null,
-    "update:selectByClick": null,
     "update:selectedItemKeys": null,
     "update:selectedItems": null,
     "update:selectionMode": null,
@@ -319,6 +316,7 @@ const DxItemDragging = createConfigurationComponent({
     "update:bindingOptions": null,
     "update:boundary": null,
     "update:container": null,
+    "update:contentTemplate": null,
     "update:cursorOffset": null,
     "update:data": null,
     "update:dragDirection": null,
@@ -339,6 +337,7 @@ const DxItemDragging = createConfigurationComponent({
     "update:onDragStart": null,
     "update:onInitialized": null,
     "update:onOptionChanged": null,
+    "update:onPlaceholderPrepared": null,
     "update:onRemove": null,
     "update:onReorder": null,
     "update:rtlEnabled": null,
@@ -353,6 +352,7 @@ const DxItemDragging = createConfigurationComponent({
     bindingOptions: Object,
     boundary: {},
     container: {},
+    contentTemplate: {},
     cursorOffset: [Object, String],
     data: {},
     dragDirection: String,
@@ -373,6 +373,7 @@ const DxItemDragging = createConfigurationComponent({
     onDragStart: Function,
     onInitialized: Function,
     onOptionChanged: Function,
+    onPlaceholderPrepared: Function,
     onRemove: Function,
     onReorder: Function,
     rtlEnabled: Boolean,
@@ -416,6 +417,8 @@ const DxOptions = createConfigurationComponent({
     "update:onClick": null,
     "update:onContentReady": null,
     "update:onDisposing": null,
+    "update:onFocusIn": null,
+    "update:onFocusOut": null,
     "update:onInitialized": null,
     "update:onOptionChanged": null,
     "update:rtlEnabled": null,
@@ -443,6 +446,8 @@ const DxOptions = createConfigurationComponent({
     onClick: Function,
     onContentReady: Function,
     onDisposing: Function,
+    onFocusIn: Function,
+    onFocusOut: Function,
     onInitialized: Function,
     onOptionChanged: Function,
     rtlEnabled: Boolean,

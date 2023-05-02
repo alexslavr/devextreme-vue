@@ -11,7 +11,6 @@ type AccessibleOptions = Pick<Properties,
   "deferRendering" |
   "disabled" |
   "elementAttr" |
-  "enableBodyScroll" |
   "height" |
   "hideEvent" |
   "hideOnOutsideClick" |
@@ -60,7 +59,6 @@ const DxPopover = createComponent({
     deferRendering: Boolean,
     disabled: Boolean,
     elementAttr: {},
-    enableBodyScroll: Boolean,
     height: [Function, Number, String],
     hideEvent: [Object, String],
     hideOnOutsideClick: [Boolean, Function],
@@ -106,7 +104,6 @@ const DxPopover = createComponent({
     "update:deferRendering": null,
     "update:disabled": null,
     "update:elementAttr": null,
-    "update:enableBodyScroll": null,
     "update:height": null,
     "update:hideEvent": null,
     "update:hideOnOutsideClick": null,

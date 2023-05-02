@@ -161,6 +161,7 @@ const DxItem = createConfigurationComponent({
     "update:template": null,
     "update:text": null,
     "update:title": null,
+    "update:visible": null,
   },
   props: {
     badge: String,
@@ -170,7 +171,8 @@ const DxItem = createConfigurationComponent({
     tabTemplate: {},
     template: {},
     text: String,
-    title: String
+    title: String,
+    visible: Boolean
   }
 });
 (DxItem as any).$_optionName = "items";

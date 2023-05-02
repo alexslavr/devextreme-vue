@@ -4,7 +4,6 @@ import { createConfigurationComponent } from "./core/index";
 
 type AccessibleOptions = Pick<Properties,
   "animation" |
-  "centerTemplate" |
   "containerBackgroundColor" |
   "disabled" |
   "elementAttr" |
@@ -43,7 +42,6 @@ interface DxCircularGauge extends AccessibleOptions {
 const DxCircularGauge = createComponent({
   props: {
     animation: Object,
-    centerTemplate: {},
     containerBackgroundColor: String,
     disabled: Boolean,
     elementAttr: Object,
@@ -79,7 +77,6 @@ const DxCircularGauge = createComponent({
     "update:isActive": null,
     "update:hoveredElement": null,
     "update:animation": null,
-    "update:centerTemplate": null,
     "update:containerBackgroundColor": null,
     "update:disabled": null,
     "update:elementAttr": null,
@@ -151,19 +148,6 @@ const DxAnimation = createConfigurationComponent({
   }
 });
 (DxAnimation as any).$_optionName = "animation";
-const DxBackgroundColor = createConfigurationComponent({
-  emits: {
-    "update:isActive": null,
-    "update:hoveredElement": null,
-    "update:base": null,
-    "update:fillId": null,
-  },
-  props: {
-    base: String,
-    fillId: String
-  }
-});
-(DxBackgroundColor as any).$_optionName = "backgroundColor";
 const DxBorder = createConfigurationComponent({
   emits: {
     "update:isActive": null,
@@ -183,19 +167,6 @@ const DxBorder = createConfigurationComponent({
   }
 });
 (DxBorder as any).$_optionName = "border";
-const DxColor = createConfigurationComponent({
-  emits: {
-    "update:isActive": null,
-    "update:hoveredElement": null,
-    "update:base": null,
-    "update:fillId": null,
-  },
-  props: {
-    base: String,
-    fillId: String
-  }
-});
-(DxColor as any).$_optionName = "color";
 const DxExport = createConfigurationComponent({
   emits: {
     "update:isActive": null,
@@ -306,12 +277,14 @@ const DxLoadingIndicator = createConfigurationComponent({
     "update:isActive": null,
     "update:hoveredElement": null,
     "update:backgroundColor": null,
+    "update:enabled": null,
     "update:font": null,
     "update:show": null,
     "update:text": null,
   },
   props: {
     backgroundColor: String,
+    enabled: Boolean,
     font: Object,
     show: Boolean,
     text: String
@@ -366,16 +339,13 @@ const DxRange = createConfigurationComponent({
     "update:startValue": null,
   },
   props: {
-    color: [Object, String],
+    color: String,
     endValue: Number,
     startValue: Number
   }
 });
 (DxRange as any).$_optionName = "ranges";
 (DxRange as any).$_isCollectionItem = true;
-(DxRange as any).$_expectedChildren = {
-  color: { isCollectionItem: false, optionName: "color" }
-};
 const DxRangeContainer = createConfigurationComponent({
   emits: {
     "update:isActive": null,
@@ -389,7 +359,7 @@ const DxRangeContainer = createConfigurationComponent({
     "update:width": null,
   },
   props: {
-    backgroundColor: [Object, String],
+    backgroundColor: String,
     offset: Number,
     orientation: String,
     palette: [Array, String],
@@ -400,7 +370,6 @@ const DxRangeContainer = createConfigurationComponent({
 });
 (DxRangeContainer as any).$_optionName = "rangeContainer";
 (DxRangeContainer as any).$_expectedChildren = {
-  backgroundColor: { isCollectionItem: false, optionName: "backgroundColor" },
   range: { isCollectionItem: true, optionName: "ranges" }
 };
 const DxScale = createConfigurationComponent({
@@ -524,7 +493,7 @@ const DxSubvalueIndicator = createConfigurationComponent({
     backgroundColor: String,
     baseValue: Number,
     beginAdaptingAtRadius: Number,
-    color: [Object, String],
+    color: String,
     horizontalOrientation: String,
     indentFromCenter: Number,
     length: Number,
@@ -543,7 +512,6 @@ const DxSubvalueIndicator = createConfigurationComponent({
 });
 (DxSubvalueIndicator as any).$_optionName = "subvalueIndicator";
 (DxSubvalueIndicator as any).$_expectedChildren = {
-  color: { isCollectionItem: false, optionName: "color" },
   text: { isCollectionItem: false, optionName: "text" }
 };
 const DxText = createConfigurationComponent({
@@ -694,7 +662,7 @@ const DxValueIndicator = createConfigurationComponent({
     backgroundColor: String,
     baseValue: Number,
     beginAdaptingAtRadius: Number,
-    color: [Object, String],
+    color: String,
     horizontalOrientation: String,
     indentFromCenter: Number,
     length: Number,
@@ -717,9 +685,7 @@ export default DxCircularGauge;
 export {
   DxCircularGauge,
   DxAnimation,
-  DxBackgroundColor,
   DxBorder,
-  DxColor,
   DxExport,
   DxFont,
   DxFormat,
